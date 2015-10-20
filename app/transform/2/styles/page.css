@@ -1,0 +1,78 @@
+html {
+    margin:0; padding:0;
+    width: 100%;
+    height: 100%;
+}
+
+BODY {
+    margin:0; padding:0;
+    background: linear-gradient(0deg, #360033 10%, #0b8793 90%);
+}
+
+
+
+.layout {
+    background: linear-gradient(0deg, rgba(255,255,255,.3) 10%, rgba(255,255,255,.4) 90%);
+
+    position: absolute;
+    left: 33px;
+    top: 111px;
+}
+
+
+.hatObject .hat {
+    width: 578px;
+    height: 479px;
+    background-image:url("images/hat/witch-hat.png");
+}
+
+.spiderObject  {
+    position: absolute;
+    left: 33px;
+    top: 211px;
+}
+
+.spiderObject .spiderBody {
+    position:relative;
+    width: 67px;
+    height: 46px;
+    background-image:url("images/spider/spider-body.png");
+}
+
+
+.spiderObject .spiderLegsLeft {
+    position:absolute;
+    left: -40px;
+    top: 5px;
+
+    width: 46px;
+    height: 76px;
+    background-image:url("images/spider/spider-legs-left.png");
+
+}
+
+.spiderObject .spiderLegsRight {
+    position:absolute;
+
+    right: -43px;
+    top: 0px;
+
+    width: 46px;
+    height: 76px;
+    background-image:url("images/spider/spider-legs-right.png");
+}
+
+
+
+.spiderObject .spiderEyes {
+
+    position:absolute;
+    left: 18px;
+    top: 14px;
+
+    width: 34px;
+    height: 16px;
+    background-image:url("images/spider/spider-eyes.png");
+}
+
+
