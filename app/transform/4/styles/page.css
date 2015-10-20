@@ -1,0 +1,118 @@
+HTML {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%; }
+
+BODY {
+  margin: 0;
+  padding: 0;
+  transform: background-image;
+  animation: backgroundTransitionAnimation 4s infinite;
+  animation-direction: alternate; }
+@keyframes backgroundTransitionAnimation {
+  0% {
+    background-image: linear-gradient(0deg, #360033 10%, #0b8793 90%); }
+  100% {
+    background-image: linear-gradient(0deg, #060033 10%, #0b8793 90%); } }
+#layout1 {
+  position: absolute;
+  left: calc((100% - 578px) / 2);
+  top: 10vh; }
+
+/* drawing CANVAS */
+#layout1Canvas {
+  position: absolute; }
+
+.hatObject .hat {
+  width: 578px;
+  height: 479px;
+  background-image: url("images/hat/witch-hat.png"); }
+.hatObject .spiderThreadStartPoint {
+  position: absolute;
+  left: 63px;
+  top: 165px; }
+
+/* wraps the object, useful for moving around the layout */
+.spiderObject {
+  position: absolute;
+  left: 33px;
+  top: 211px;
+  /* animate the poor arachnid */
+  transform: rotateZ(15deg);
+  animation: spiderAnimation1 1s infinite;
+  animation-direction: alternate;
+  cursor: pointer;
+  /* ========== animation ========== */
+  /* draws thread to here */ }
+@keyframes spiderAnimation1 {
+  0% {
+    transform: rotateZ(15deg); }
+  100% {
+    transform: rotateZ(-15deg); } }
+  .spiderObject .spiderBody {
+    position: relative;
+    width: 67px;
+    height: 46px;
+    background-image: url("images/spider/spider-body.png"); }
+  .spiderObject .spiderLegsLeft {
+    position: absolute;
+    left: -40px;
+    top: 5px;
+    width: 46px;
+    height: 76px;
+    background-image: url("images/spider/spider-legs-left.png");
+    animation: spiderLegsLeftAnimation1 1s infinite;
+    animation-direction: alternate;
+    transform-origin: 50% 80%; }
+@keyframes spiderLegsLeftAnimation1 {
+  0% {
+    transform: rotateZ(0deg);
+    transform: scaleY(1); }
+  100% {
+    transform: rotateZ(20deg);
+    transform: scaleY(0.8); } }
+  .spiderObject .spiderLegsRight {
+    position: absolute;
+    right: -43px;
+    top: 0px;
+    width: 46px;
+    height: 76px;
+    background-image: url("images/spider/spider-legs-right.png");
+    animation: spiderLegsRightAnimation1 1s infinite;
+    animation-direction: alternate;
+    transform-origin: 50% 80%;
+    /* right legs */ }
+@keyframes spiderLegsRightAnimation1 {
+  0% {
+    transform: rotateZ(0deg);
+    transform: scaleY(1.2); }
+  100% {
+    transform: rotateZ(-20deg);
+    transform: scaleY(0.8); } }
+  .spiderObject .spiderEye {
+    position: absolute;
+    top: 14px;
+    width: 8px;
+    height: 8px;
+    animation: spiderEyesAnimation1 1s infinite;
+    animation-direction: alternate;
+    border-radius: 8px;
+    opacity: 0.6; }
+    .spiderObject .spiderEye.oculusSinister {
+      left: 28px; }
+    .spiderObject .spiderEye.oculusDexter {
+      left: 48px; }
+@keyframes spiderEyesAnimation1 {
+  0% {
+    background-color: #f33;
+    transform: scaleY(1); }
+  100% {
+    transform: scaleY(0.5);
+    background-color: #533; } }
+  .spiderObject .spiderCenterOfMassReference {
+    position: absolute;
+    left: 33px;
+    top: 25px; }
+
+/*# sourceMappingURL=page.css.map */

@@ -1,0 +1,65 @@
+
+HTML {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+BODY {
+  margin: 0;
+  padding: 0;
+
+  transform: background-image;
+  animation: backgroundTransitionAnimation 4s infinite;
+  animation-direction: alternate;
+
+  // not very smooth
+  @at-root {
+    @keyframes backgroundTransitionAnimation {
+      0% {
+        background-image: linear-gradient(0deg, #360033 10%, #0b8793 90%);
+      }
+      100% {
+        background-image: linear-gradient(0deg, #060033 10%, #0b8793 90%);
+      }
+    }
+
+  }
+
+}
+
+#layout1 {
+
+  position: absolute;
+  left: calc((100% - 578px) / 2);
+  top: 10vh;
+}
+
+/* drawing CANVAS */
+#layout1Canvas {
+  position: absolute;
+}
+
+.hatObject {
+
+  .hat {
+    width: 578px;
+    height: 479px;
+    background-image: url("images/hat/witch-hat.png");
+  }
+
+  .spiderThreadStartPoint {
+    position: absolute;
+    left: 63px;
+    top: 165px;
+  }
+
+}
+
+/* wraps the object, useful for moving around the layout */
+.spiderTransformationReference {
+
+}
+
+@import "spiderObject";

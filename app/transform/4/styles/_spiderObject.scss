@@ -1,0 +1,152 @@
+// ====== variables =======
+
+// color of eye
+$spider-eye-open-color: #f33;
+$spider-eye-closed-color: #533;
+
+//====================
+
+.spiderObject {
+  position: absolute;
+  left: 33px;
+  top: 211px;
+
+  /* animate the poor arachnid */
+  transform: rotateZ(15deg);
+  animation: spiderAnimation1 1s infinite;
+  animation-direction: alternate;
+  cursor: pointer;
+
+  /* ========== animation ========== */
+  @at-root {
+
+    @keyframes spiderAnimation1 {
+      0% {
+        transform: rotateZ(15deg);
+      }
+      100% {
+        transform: rotateZ(-15deg);
+      }
+    }
+
+  }
+
+  .spiderBody {
+    position: relative;
+    width: 67px;
+    height: 46px;
+    background-image: url("images/spider/spider-body.png");
+  }
+
+  .spiderLegsLeft {
+    position: absolute;
+    left: -40px;
+    top: 5px;
+
+    width: 46px;
+    height: 76px;
+    background-image: url("images/spider/spider-legs-left.png");
+
+    animation: spiderLegsLeftAnimation1 1s infinite;
+    animation-direction: alternate;
+    transform-origin: 50% 80%;
+
+    @at-root {
+      @keyframes spiderLegsLeftAnimation1 {
+        0% {
+          transform: rotateZ(0deg);
+          transform: scaleY(1);
+        }
+        100% {
+          transform: rotateZ(20deg);
+          transform: scaleY(0.8);
+        }
+      }
+
+    }
+
+  }
+
+  .spiderLegsRight {
+    position: absolute;
+
+    right: -43px;
+    top: 0px;
+
+    width: 46px;
+    height: 76px;
+    background-image: url("images/spider/spider-legs-right.png");
+
+    animation: spiderLegsRightAnimation1 1s infinite;
+    animation-direction: alternate;
+    transform-origin: 50% 80%;
+
+    /* right legs */
+    @at-root {
+      @keyframes spiderLegsRightAnimation1 {
+        0% {
+          transform: rotateZ(0deg);
+          transform: scaleY(1.2);
+        }
+        100% {
+          transform: rotateZ(-20deg);
+          transform: scaleY(0.8);
+        }
+      }
+
+    }
+
+  }
+
+  .spiderEye {
+
+    position: absolute;
+    top: 14px;
+    width: 8px;
+    height: 8px;
+
+    // use shapes this time
+    //background-image: url("images/spider/spider-eyes.png");
+
+    animation: spiderEyesAnimation1 1s infinite;
+    animation-direction: alternate;
+    border-radius: 8px;
+
+    opacity: 0.6;
+
+    // --- discriminate between left and right eye
+    &.oculusSinister {
+      left: 28px;
+    }
+
+    &.oculusDexter {
+      left: 48px;
+
+    }
+
+    @at-root {
+      @keyframes spiderEyesAnimation1 {
+        0% {
+          background-color: $spider-eye-open-color;
+          transform: scaleY(1);
+        }
+        100% {
+          transform: scaleY(0.5);
+          background-color: $spider-eye-closed-color;
+        }
+      }
+    }
+
+  }
+
+
+
+
+  /* draws thread to here */
+  .spiderCenterOfMassReference {
+    position: absolute;
+    left: 33px;
+    top: 25px;
+  }
+
+}
